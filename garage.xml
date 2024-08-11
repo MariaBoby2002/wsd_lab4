@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="garage.xsl" type="text/xsl" ?> 
+<garageBooking xmlns="http://www.example.com/garage"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.example.com/garage garage.xsd"
+               >
+    <bookings>
+        <booking id="b001">
+            <customerId>c001</customerId>
+            <vehicleModel>Honda Civic</vehicleModel>
+            <serviceDate>2024-08-20</serviceDate>
+            <serviceId>s001</serviceId>
+            <priceAmount>100.00</priceAmount>
+            <locationId>loc001</locationId>
+            <paymentMethodId>pm001</paymentMethodId>
+            <ratingId>r001</ratingId>
+        </booking>
+        <!-- More bookings -->
+    </bookings>
+
+    <locations>
+        <location id="loc001">
+            <street>123 Main St</street>
+            <city>New York City</city>
+            <state>NY</state>
+            <postalCode>10001</postalCode>
+            <country>USA</country>
+        </location>
+        <!-- More locations -->
+    </locations>
+
+    <customers>
+        <customer id="c001">
+            <name>John Doe</name>
+            <phone>555-1234</phone>
+            <email>johndoe@example.com</email>
+        </customer>
+        <!-- More customers -->
+    </customers>
+
+    <services>
+        <service id="s001">
+            <serviceName>Oil Change</serviceName>
+            <serviceCost>50.00</serviceCost>
+            <serviceHours>1</serviceHours>
+        </service>
+        <!-- More services -->
+    </services>
+
+    <paymentMethods>
+        <paymentMethod id="pm001">CreditCard</paymentMethod>
+        <paymentMethod id="pm002">DebitCard</paymentMethod>
+        <paymentMethod id="pm003">PayPal</paymentMethod>
+        <paymentMethod id="pm004">BankTransfer</paymentMethod>
+    </paymentMethods>
+    
+    
+
+    
+
+    <ratings>
+        <rating id="r001">Excellent</rating>
+        <!-- More ratings -->
+    </ratings>
+    <garageDetails id="gd001">
+        <garageName>Super Garage</garageName>
+        <garageAddress>456 Elm St, Suite 100</garageAddress>
+        <contactNumber>555-6789</contactNumber>
+    </garageDetails>
+
+    <availabilityDetails id="ad001">
+        <serviceId>s001</serviceId>
+        <availableDates>2024-08-20,2024-08-21,2024-08-22</availableDates>
+    </availabilityDetails>
+</garageBooking>

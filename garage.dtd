@@ -1,0 +1,68 @@
+<!ELEMENT garageBooking (bookings, locations, customers, services, paymentMethods, ratings)>
+<!ELEMENT bookings (booking+)>
+<!ELEMENT booking (customerId, vehicleModel, serviceDate, serviceId, priceAmount, locationId, paymentMethodId, ratingId)>
+<!ATTLIST booking id ID #REQUIRED>
+
+<!ELEMENT customerId EMPTY>
+<!ATTLIST customerId id ID #REQUIRED>
+
+<!ELEMENT vehicleModel (#PCDATA)>
+<!ELEMENT serviceDate (#PCDATA)>
+<!ELEMENT serviceId EMPTY>
+<!ATTLIST serviceId id ID #REQUIRED>
+
+<!ELEMENT priceAmount (#PCDATA)>
+<!ELEMENT locationId EMPTY>
+<!ATTLIST locationId id ID #REQUIRED>
+
+<!ELEMENT paymentMethodId EMPTY>
+<!ATTLIST paymentMethodId id ID #REQUIRED>
+
+<!ELEMENT ratingId EMPTY>
+<!ATTLIST ratingId id ID #REQUIRED>
+
+<!ELEMENT locations (location+)>
+<!ELEMENT location (street, city, state, postalCode, country)>
+<!ATTLIST location id ID #REQUIRED>
+
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ELEMENT postalCode (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+
+<!ELEMENT customers (customer+)>
+<!ELEMENT customer (name, phone, email)>
+<!ATTLIST customer id ID #REQUIRED>
+
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+
+<!ELEMENT services (service+)>
+<!ELEMENT service (serviceName, serviceCost, serviceHours)>
+<!ATTLIST service id ID #REQUIRED>
+
+<!ELEMENT serviceName (#PCDATA)>
+<!ELEMENT serviceCost (#PCDATA)>
+<!ELEMENT serviceHours (#PCDATA)>
+
+<!ELEMENT paymentMethods (paymentMethod+)>
+<!ELEMENT paymentMethod (#PCDATA)>
+<!ATTLIST paymentMethod id ID #REQUIRED>
+
+<!ELEMENT ratings (rating+)>
+<!ELEMENT rating (#PCDATA)>
+<!ATTLIST rating id ID #REQUIRED>
+
+<!ELEMENT garageDetails (garageName, garageAddress, contactNumber)>
+<!ATTLIST garageDetails id ID #REQUIRED>
+
+<!ELEMENT garageName (#PCDATA)>
+<!ELEMENT garageAddress (#PCDATA)>
+<!ELEMENT contactNumber (#PCDATA)>
+
+<!ELEMENT availabilityDetails (serviceId, availableDates)>
+<!ATTLIST availabilityDetails id ID #REQUIRED>
+
+<!ELEMENT availableDates (#PCDATA)>

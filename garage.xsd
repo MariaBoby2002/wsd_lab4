@@ -1,0 +1,164 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:gb="http://www.example.com/garage"
+           targetNamespace="http://www.example.com/garage"
+           elementFormDefault="qualified">
+
+    <!-- Define the garageBooking element -->
+    <xs:element name="garageBooking">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- Bookings element -->
+                <xs:element name="bookings">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="booking" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="customerId" type="xs:string"/>
+                                        <xs:element name="vehicleModel" type="xs:string"/>
+                                        <xs:element name="serviceDate" type="xs:date"/>
+                                        <xs:element name="serviceId" type="xs:string"/>
+                                        <xs:element name="priceAmount" type="xs:decimal"/>
+                                        <xs:element name="locationId" type="xs:string"/>
+                                        <xs:element name="paymentMethodId" type="xs:string"/>
+                                        <xs:element name="ratingId" type="xs:string"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" type="xs:string" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <!-- Locations element -->
+                <xs:element name="locations">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="location" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="street" type="xs:string"/>
+                                        <xs:element name="city" type="xs:string"/>
+                                        <xs:element name="state" type="xs:string"/>
+                                        <xs:element name="postalCode" type="xs:string"/>
+                                        <xs:element name="country" type="xs:string"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" type="xs:string" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <!-- Customers element -->
+                <xs:element name="customers">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="customer" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="name" type="xs:string"/>
+                                        <xs:element name="phone" type="xs:string"/>
+                                        <xs:element name="email" type="xs:string"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" type="xs:string" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <!-- Services element -->
+                <xs:element name="services">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="service" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="serviceName" type="xs:string"/>
+                                        <!-- Define serviceCost with a restriction to ensure it's a positive decimal -->
+                                        <xs:element name="serviceCost">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:decimal">
+                                                    <xs:minExclusive value="0"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <!-- Define serviceHours with a restriction to ensure it's a positive decimal -->
+                                        <xs:element name="serviceHours">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:decimal">
+                                                    <xs:minExclusive value="0"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" type="xs:string" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <!-- Payment Methods element -->
+                <xs:element name="paymentMethods">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="paymentMethod" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute name="id" type="xs:string" use="required"/>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <!-- Ratings element -->
+                <xs:element name="ratings">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="rating" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute name="id" type="xs:string" use="required"/>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <!-- Garage Details element -->
+                <xs:element name="garageDetails">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="garageName" type="xs:string"/>
+                            <xs:element name="garageAddress" type="xs:string"/>
+                            <xs:element name="contactNumber" type="xs:string"/>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:string" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+
+                <!-- Availability Details element -->
+                <xs:element name="availabilityDetails">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="serviceId" type="xs:string"/>
+                            <xs:element name="availableDates" type="xs:string"/>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:string" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
