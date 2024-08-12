@@ -183,7 +183,7 @@
                         </xsl:for-each>
                     </tbody>
                 </table>
-                <h2>Route Map between Delhi and Agra</h2>
+                <h2>Route Map between Kearala and Banglore</h2>
     <div id="map" class="map"></div>
 
     <!-- Leaflet JS -->
