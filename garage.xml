@@ -31,9 +31,9 @@
 
     <customers>
         <customer id="c001">
-            <name>John Doe</name>
-            <phone>555-1234</phone>
-            <email>johndoe@example.com</email>
+            <name>Shaun Joe</name>
+            <phone>789809890</phone>
+            <email>jo@example.com</email>
         </customer>
         <!-- More customers -->
     </customers>
