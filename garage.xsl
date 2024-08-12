@@ -38,7 +38,7 @@
                 </style>
             </head>
             <body>
-                <h1>Your Domain Name</h1>
+                <h1>Garage Booking</h1>
 
                 <!-- Bookings Table -->
                 <h2>Bookings</h2>
