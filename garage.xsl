@@ -192,8 +192,8 @@
     <script>
         console.log("Initializing map..."); // Add this line to debug
       function initMap() {
-        // Initialize map centered between Delhi and Agra
-        var map = L.map('map').setView([27.84, 77.57], 7); // Centered between Delhi and Agra
+        
+        var map = L.map('map').setView([27.84, 77.57], 7); 
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
           maxZoom: 19,
